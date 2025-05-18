@@ -1,15 +1,123 @@
 <%- include("partials/header.ejs") %>
 
-<!-- to add new posts-->
-<div>
-<form action="/new" method="POST">
-  <input type="text" name="title" placeholder="Enter title" required>
-  <br>
-  <textarea name="description" placeholder="short description about the post "></textarea>
-  <br>
-  <textarea name="content" placeholder="You can write your content here " required></textarea><br> 
-  <button type="submit">Publish</button> 
-</form>
+<div class="container py-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="card shadow-sm">
+        <div class="card-body p-4">
+          <h2 class="text-center mb-4">Create New Post</h2>
+          
+          <form action="/new" method="POST" class="needs-validation" novalidate>
+            <div class="mb-4">
+              <label for="title" class="form-label">Title</label>
+              <input 
+                type="text" 
+                class="form-control form-control-lg" 
+                id="title" 
+                name="title" 
+                placeholder="Enter your post title" 
+                required
+              >
+              <div class="invalid-feedback">
+                Please enter a title for your post.
+              </div>
+            </div>
+
+            <div class="mb-4">
+              <label for="description" class="form-label">Short Description</label>
+              <textarea 
+                class="form-control" 
+                id="description" 
+                name="description" 
+                rows="3" 
+                placeholder="Write a brief description of your post"
+              ></textarea>
+            </div>
+
+            <div class="mb-4">
+              <label for="content" class="form-label">Content</label>
+              <textarea 
+                class="form-control" 
+                id="content" 
+                name="content" 
+                rows="10" 
+                placeholder="Write your post content here..." 
+                required
+              ></textarea>
+              <div class="invalid-feedback">
+                Please write your post content.
+              </div>
+            </div>
+
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+              <a href="/" class="btn btn-outline-secondary me-md-2">Cancel</a>
+              <button type="submit" class="btn btn-primary">
+                <i class="fas fa-paper-plane me-2"></i>Publish Post
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
+
+<style>
+  .form-control {
+    border: 1px solid #e0e0e0;
+    transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  }
+
+  .form-control:focus {
+    border-color: #0984e3;
+    box-shadow: 0 0 0 0.2rem rgba(9, 132, 227, 0.25);
+  }
+
+  .form-control::placeholder {
+    color: #adb5bd;
+  }
+
+  .btn-primary {
+    background-color: #0984e3;
+    border-color: #0984e3;
+  }
+
+  .btn-primary:hover {
+    background-color: #0873c4;
+    border-color: #0873c4;
+  }
+
+  .btn-outline-secondary {
+    color: #6c757d;
+    border-color: #6c757d;
+  }
+
+  .btn-outline-secondary:hover {
+    background-color: #6c757d;
+    color: white;
+  }
+
+  .card {
+    border: none;
+    border-radius: 10px;
+  }
+</style>
+
+<script>
+  // Form validation
+  (function () {
+    'use strict'
+    var forms = document.querySelectorAll('.needs-validation')
+    Array.prototype.slice.call(forms).forEach(function (form) {
+      form.addEventListener('submit', function (event) {
+        if (!form.checkValidity()) {
+          event.preventDefault()
+          event.stopPropagation()
+        }
+        form.classList.add('was-validated')
+      }, false)
+    })
+  })()
+</script>
 
 <%- include("partials/footer.ejs") %>

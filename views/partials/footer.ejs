@@ -1,10 +1,70 @@
 </main>
-<div class="footer-content">
-<footer>
-  <p>&copy ; <%= new Date().getFullYear() %> Pilli's Blogs.All rights reserved. </p>
-  <a href="#"><i class="fab fa-twitter"></i></a>
-  <a href="#"><i class="fab fa-github"></i></a>
+<footer class="footer mt-5 py-4 bg-light">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 mb-3 mb-md-0">
+        <h5 class="text-primary mb-3">Pilli's Blogs</h5>
+        <p class="text-muted">Share your stories, connect with readers, and build your audience.</p>
+      </div>
+      <div class="col-md-4 mb-3 mb-md-0">
+        <h5 class="text-primary mb-3">Quick Links</h5>
+        <ul class="list-unstyled">
+          <li><a href="/" class="text-decoration-none text-muted">Home</a></li>
+          <li><a href="/new" class="text-decoration-none text-muted">New Post</a></li>
+        </ul>
+      </div>
+      <div class="col-md-4">
+        <h5 class="text-primary mb-3">Connect With Us</h5>
+        <div class="social-links">
+          <a href="#" class="text-decoration-none text-muted me-3">
+            <i class="fab fa-twitter"></i> Twitter
+          </a>
+          <a href="#" class="text-decoration-none text-muted me-3">
+            <i class="fab fa-github"></i> GitHub
+          </a>
+          <a href="#" class="text-decoration-none text-muted">
+            <i class="fab fa-linkedin"></i> LinkedIn
+          </a>
+        </div>
+      </div>
+    </div>
+    <hr class="my-4">
+    <div class="row">
+      <div class="col-md-6 text-center text-md-start">
+        <p class="mb-0 text-muted">&copy; <%= new Date().getFullYear() %> Pilli's Blogs. All rights reserved.</p>
+      </div>
+      <div class="col-md-6 text-center text-md-end">
+        <a href="#" class="text-decoration-none text-muted me-3">Privacy Policy</a>
+        <a href="#" class="text-decoration-none text-muted">Terms of Service</a>
+      </div>
+    </div>
+  </div>
 </footer>
-</div>
+
+<!-- Font Awesome for social icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+<style>
+  .footer {
+    border-top: 1px solid rgba(0,0,0,0.1);
+  }
+  
+  .footer a {
+    transition: color 0.2s ease-in-out;
+  }
+  
+  .footer a:hover {
+    color: #0984e3 !important;
+  }
+  
+  .social-links a {
+    display: inline-block;
+    margin-bottom: 0.5rem;
+  }
+  
+  .social-links i {
+    margin-right: 0.5rem;
+  }
+</style>
 </body>
 </html>
