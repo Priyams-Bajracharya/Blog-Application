@@ -1,0 +1,15 @@
+<%- include("partials/header.ejs") %>
+
+<!-- to add new posts-->
+<div>
+<form action="/new" method="POST">
+  <input type="text" name="title" placeholder="Enter title" required>
+  <br>
+  <textarea name="description" placeholder="short description about the post "></textarea>
+  <br>
+  <textarea name="content" placeholder="You can write your content here " required></textarea><br> 
+  <button type="submit">Publish</button> 
+</form>
+</div>
+
+<%- include("partials/footer.ejs") %>

@@ -1,0 +1,22 @@
+<%- include("partials/header.ejs") %>
+<h1>Welcome to my blog app !!</h1>
+
+<div>
+<%  posts.forEach((post) => {
+  %>
+  <div class="post-title"></div>
+  <h2><a href="/post/<%= post.id %>"><%= post.title  %></a></h2>
+  </div>
+  <p><%= post.description %></p>
+  <a href="/delete/<%= post.id %>"><button class="delete-button">Delete post</button></a>
+<%}) %>
+</div>
+
+
+
+
+
+
+
+
+<%- include("partials/footer.ejs") %>
